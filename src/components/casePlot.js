@@ -26,22 +26,26 @@ export function smallPlot(data, outcome, { width }) {
     }
 }
 
-export function casePlot(data, outcome, duration, { width }) {
-    if (outcome == "Cases" && duration == "Past year") {
-        return Plot.plot({
-            width,
-            height: 300,
-            y: { grid: true, label: "Cases" },
-            marks: [
-                Plot.lineY(data, { y: "cases", x: "week_start" }),
-            ]
-        });
-    } else {
-        return Plot.plot({
-            marks: [
-                Plot.frame(),
-                Plot.text(["Not implemented yet"], { frameAnchor: "middle" })
-            ]
-        })
-    }
+export function mapPlot(data, nation, states, { width }) {
+    return Plot.plot({
+        projection: "albers-usa",
+        width,
+        height: 400,
+        color: {
+            type: "threshold",
+            domain: [1, 3, 10, 30, 100, 300],
+            scheme: "reds",
+            label: "Cases",
+            legend: true
+        },
+        marks: [
+            Plot.sphere(),
+            Plot.geo(data, {
+            fill: "cases",
+            tip: true
+            }),
+            Plot.geo(nation),
+            Plot.geo(states)
+        ]
+    })
 }

@@ -5,7 +5,7 @@ toc: true
 ---
 
 ```js
-import {casePlot, smallPlot} from "./components/casePlot.js";
+import {casePlot, smallPlot, mapPlot} from "./components/casePlot.js";
 import {utcParse} from "npm:d3-time-format";
 
 const parseDate = utcParse("%Y");
@@ -17,6 +17,10 @@ function coerceTypes(d) {
 
 const cases = FileAttachment("data/measles-cases.csv").csv({typed: true});
 const vax_us = FileAttachment("data/vaccine-coverage-us.csv").csv({typed: true}).then((D) => D.map(coerceTypes));
+const cases_county = FileAttachment("data/measles-cases-county.json").json({typed: true});
+const nation = FileAttachment("data/nation.json").json({typed: true});
+const states = FileAttachment("data/states.json").json({typed: true});
+
 ```
 
 # Measles Overview
@@ -43,45 +47,10 @@ const vax_us = FileAttachment("data/vaccine-coverage-us.csv").csv({typed: true})
   </div>
 </div>
 
+### Cases by U.S. county
 
-```js
-const outcome = view(Inputs.radio(["Vaccination", "Cases", "Hospitalization"], {label: "Outcome of interest:", value: "Vaccination"}));
-```
+${resize((width) => mapPlot(cases_county, nation, states, {width}))}
 
-```js
-let durations;
-
-if (outcome == "Cases") {
-  durations = ["Past 3 months", "Past year", "Past 10 years"];
-} else {
-  durations = [];
-}
-
-const durationInput = Inputs.radio(durations, { label: "Duration" });
-const duration = Generators.input(durationInput);
-```
-
-```js
-let explainerText = "";
-
-if (outcome == "Cases" && duration == "Past year") {
-  explainerText = html`
-    <p>Typically, cases rise in January and increase through the first half of the year, then decline.</p>
-    <p>Here is another paragraph.</p>
-  `;
-}
-```
-
-<div class="grid grid-cols-2">
-  <div class="card">
-    ${resize((width) => casePlot(cases, outcome, duration, {width}))}
-  </div>
-  <div class="card">
-    <p>${explainerText}</p>
-  </div>
-
-  ${durationInput}
-</div>
 
 ## Looking ahead
 
