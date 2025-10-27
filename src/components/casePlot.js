@@ -1,4 +1,5 @@
 import * as Plot from "npm:@observablehq/plot";
+import * as d3 from "npm:d3";
 
 export function smallPlot(data, outcome, { width }) {
     if (outcome == "Cases") {
@@ -27,7 +28,7 @@ export function smallPlot(data, outcome, { width }) {
 }
 
 export function mapPlot(data, nation, states, { width }) {
-    return Plot.plot({
+    const mplot = Plot.plot({
         projection: "albers-usa",
         width,
         height: 400,
@@ -41,11 +42,21 @@ export function mapPlot(data, nation, states, { width }) {
         marks: [
             Plot.sphere(),
             Plot.geo(data, {
-            fill: "cases",
-            tip: true
+                fill: "cases",
+                tip: true
             }),
             Plot.geo(nation),
             Plot.geo(states)
         ]
-    })
+    });
+
+    const mapSvgs = d3.select(mplot.childNodes[1]).selectChildren();
+
+    mapSvgs.call(d3.zoom().scaleExtent([1, 5]).on("zoom", (ev) => {
+        if (!isNaN(ev.transform.x)) {
+            mapSvgs.attr('transform', ev.transform);
+        }
+    }));
+
+    return mplot;
 }

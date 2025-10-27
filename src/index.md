@@ -7,7 +7,9 @@ toc: true
 ```js
 import {casePlot, smallPlot, mapPlot} from "./components/casePlot.js";
 import {utcParse} from "npm:d3-time-format";
+```
 
+```js
 const parseDate = utcParse("%Y");
 
 function coerceTypes(d) {
