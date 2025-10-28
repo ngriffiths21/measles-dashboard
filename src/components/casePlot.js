@@ -28,10 +28,11 @@ export function smallPlot(data, outcome, { width }) {
 }
 
 export function mapPlot(data, nation, states, { width }) {
+    const height = 400;
     const mplot = Plot.plot({
         projection: "albers-usa",
         width,
-        height: 400,
+        height,
         color: {
             type: "threshold",
             domain: [1, 3, 10, 30, 100, 300],
@@ -50,11 +51,14 @@ export function mapPlot(data, nation, states, { width }) {
         ]
     });
 
-    const mapSvgs = d3.select(mplot.childNodes[1]).selectChildren();
+    // The Plot default has a 0.5 pixel translation
+    const rect = [[-0.5, -0.5], [width - 0.5, height - 0.5]];
+    const mapSvg = d3.select(mplot.childNodes[1]);
+    const mapGs = mapSvg.selectChildren();
 
-    mapSvgs.call(d3.zoom().scaleExtent([1, 5]).on("zoom", (ev) => {
+    mapSvg.call(d3.zoom().scaleExtent([1, 5]).translateExtent(rect).on("zoom", (ev) => {
         if (!isNaN(ev.transform.x)) {
-            mapSvgs.attr('transform', ev.transform);
+            mapGs.attr('transform', ev.transform);
         }
     }));
 
