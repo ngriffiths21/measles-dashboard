@@ -51,8 +51,16 @@ const states = FileAttachment("data/states.json").json({typed: true});
 
 ### Cases by U.S. county
 
-${resize((width) => mapPlot(cases_county, nation, states, {width}))}
+```js
+const zoom = Mutable(1);
 
+const zoomHandler = (ev) => {
+  console.log("event", ev);
+  zoom.value = ev.transform.k * zoom.value;
+};
+```
+
+${resize((width) => mapPlot(cases_county, nation, states, zoomHandler, {width, scale: zoom}))}
 
 ## Looking ahead
 

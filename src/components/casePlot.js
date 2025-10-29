@@ -27,10 +27,14 @@ export function smallPlot(data, outcome, { width }) {
     }
 }
 
-export function mapPlot(data, nation, states, { width }) {
+export function mapPlot(data, nation, states, zoomHandler, { width, scale }) {
+    const projectn = d3.geoAlbersUsa();
+    projectn.scale(projectn.scale() * scale);
+    console.log("rendering, scale is", scale);
+
     const height = 400;
     const mplot = Plot.plot({
-        projection: "albers-usa",
+        projection: projectn,
         width,
         height,
         color: {
@@ -62,11 +66,12 @@ export function mapPlot(data, nation, states, { width }) {
     // The Plot default has a 0.5 pixel translation
     const rect = [[-0.5, -0.5], [width - 0.5, height - 0.5]];
 
-    d3.select(baseSvg).call(d3.zoom().scaleExtent([1, 2]).translateExtent(rect).on("zoom", (ev) => {
-        if (!isNaN(ev.transform.x)) {
-            d3.select(mapSvg).attr('transform', ev.transform);
-        }
-    }));
+    // d3.select(baseSvg).call(d3.zoom().scaleExtent([1, 2]).translateExtent(rect).on("zoom", (ev) => {
+    //     if (!isNaN(ev.transform.x)) {
+    //         d3.select(mapSvg).attr('transform', ev.transform);
+    //     }
+    // }));
 
+    d3.select(baseSvg).call(d3.zoom().on("end", zoomHandler));
     return mplot;
 }
