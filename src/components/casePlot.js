@@ -51,14 +51,20 @@ export function mapPlot(data, nation, states, { width }) {
         ]
     });
 
+    const mapSvg = mplot.childNodes[1];
+
+    // Construct base container for map portion, excluding scale
+    const baseSvg = d3.create("svg").node();
+    mapSvg.replaceWith(baseSvg);
+    baseSvg.append(mapSvg);
+    d3.select(baseSvg).attr("viewBox", d3.select(mapSvg).attr("viewBox"));
+
     // The Plot default has a 0.5 pixel translation
     const rect = [[-0.5, -0.5], [width - 0.5, height - 0.5]];
-    const mapSvg = d3.select(mplot.childNodes[1]);
-    const mapGs = mapSvg.selectChildren();
 
-    mapSvg.call(d3.zoom().scaleExtent([1, 5]).translateExtent(rect).on("zoom", (ev) => {
+    d3.select(baseSvg).call(d3.zoom().scaleExtent([1, 2]).translateExtent(rect).on("zoom", (ev) => {
         if (!isNaN(ev.transform.x)) {
-            mapGs.attr('transform', ev.transform);
+            d3.select(mapSvg).attr('transform', ev.transform);
         }
     }));
 
