@@ -5,7 +5,7 @@ toc: true
 ---
 
 ```js
-import {casePlot, smallPlot, mapPlot} from "./components/casePlot.js";
+import {casePlot, smallPlot, mapPlot, mapPlotZoom} from "./components/casePlot.js";
 import {utcParse} from "npm:d3-time-format";
 ```
 
@@ -51,7 +51,7 @@ const states = FileAttachment("data/states.json").json({typed: true});
 
 ### Cases by U.S. county
 
-${resize((width) => mapPlot(cases_county, nation, states, {width}))}
+${resize((width) => mapPlotZoom(cases_county, nation, states, {width}))}
 
 
 ## Looking ahead

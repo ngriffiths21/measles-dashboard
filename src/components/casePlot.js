@@ -27,6 +27,75 @@ export function smallPlot(data, outcome, { width }) {
     }
 }
 
+export function mapPlotZoom(countymesh, nation, statemesh, { width }) {
+    const color = d3.scaleQuantize([1, 10], d3.schemeReds[9]);
+    const path = d3.geoPath(d3.geoAlbersUsa());
+
+    const svg = d3.create("svg")
+        .attr("width", `${width}`)
+        .attr("viewBox", `0 0 975 610`)
+        .attr("style", "height: auto;")
+        .attr("overflow", "visible");
+
+    svg.selectAll("path")
+        .data(countymesh.features)
+        .join("path")
+        .attr("fill", d => color(d.properties.cases))
+        .attr("stroke", "none")
+        .attr("d", path)
+        .on("mouseover", showToolTip)
+        .on("mouseout", closeToolTip);
+
+    svg.append("path")
+        .datum(statemesh)
+        .join("path")
+        .attr("fill", "none")
+        .attr("stroke", "black")
+        .attr("stroke-linejoin", "round")
+        .attr("stroke-width", "3")
+        .attr("d", path);
+
+    function showToolTip(ev) {
+        const countyData = d3.select(ev.target).data()[0];
+        if (countyData.properties === undefined) return;
+
+        const countyName = countyData.properties.NAME + ", " + countyData.properties.STATE_NAME;
+        const cases = countyData.properties.cases;
+        const anchor_loc = path.centroid(countyData);
+
+        const textG = svg.append("g")
+            .attr("id", "tooltip");
+
+        textG.append("text")
+            .attr("x", anchor_loc[0] + 20)
+            .attr("y", anchor_loc[1] - 35)
+            .text(`${countyName}`);
+
+        textG.append("text")
+            .attr("x", anchor_loc[0] + 20)
+            .attr("y", anchor_loc[1] - 10)
+            .text(`Cases: ${cases}`);
+
+        const textRect = textG.node().getBBox();
+
+        textG.insert("rect", "text")
+            .attr("x", `${textRect.x - 5}`)
+            .attr("y", `${textRect.y - 5}`)
+            .attr("width", `${textRect.width + 10}`)
+            .attr("height", `${textRect.height + 10}`)
+            .attr("fill", "white")
+            .attr("stroke", "black")
+            .node();
+    }
+
+    function closeToolTip(ev) {
+        svg.select("#tooltip")
+            .remove();
+    }
+
+    return svg.node();
+}
+
 export function mapPlot(data, nation, states, { width }) {
     const height = 400;
     const mplot = Plot.plot({
