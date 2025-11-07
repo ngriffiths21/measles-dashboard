@@ -4,7 +4,7 @@ import * as d3 from "npm:d3";
 export function smallPlot(data, outcome, { width }) {
     if (outcome == "Cases") {
         return Plot.plot({
-            title: "New measles cases, United States, 2023–2025",
+            title: "New measles cases per week, United States, 2023–2025",
             width,
             height: 150,
             y: { grid: false, label: "Cases" },

@@ -1,3 +1,5 @@
+import MarkdownItFootnote from "markdown-it-footnote";
+
 // See https://observablehq.com/framework/config for documentation.
 export default {
   // The app’s title; used in the sidebar and webpage titles.
@@ -35,4 +37,7 @@ export default {
   // typographer: false, // smart quotes and other typographic improvements
   // preserveExtension: false, // drop .html from URLs
   // preserveIndex: false, // drop /index from URLs
+
+  // enable footnotes
+  markdownIt: (md) => md.use(MarkdownItFootnote)
 };
