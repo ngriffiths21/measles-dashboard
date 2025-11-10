@@ -29,7 +29,7 @@ const states = FileAttachment("data/states.json").json({typed: true});
 
 <div class="grid grid-cols-2"> <div>
 
-## Recent Data
+## Recent Outbreaks
 
 The United States has been seeing a surge of measles cases in 2025. It is
 the largest number of cases in a year since 1992[^1], when measles cases
@@ -58,8 +58,7 @@ prior infections and vaccinations.[^3]
     Prevaccination Period, United
     States](https://wwwnc.cdc.gov/eid/article/30/6/23-1285_article)
 
-[^3]: StatPearls,
-    [Measles](https://www.ncbi.nlm.nih.gov/books/NBK448068/).
+[^3]: StatPearls, [Measles](https://www.ncbi.nlm.nih.gov/books/NBK448068/).
 
 This year's surge began with a large outbreak in West Texas which spread
 to New Mexico, Oklahoma, and Kansas. This is still the largest outbreak so
@@ -82,9 +81,40 @@ people.
 
 ## Vaccination
 
-The number of Kindergarteners without full vaccination has increased
-slightly in the past few years. This probably doesn't fully explain these
-outbreaks, however, since the *national* immunity rate remains quite high
+The CDC Pink Book notes that people born before 1957 can be assumed immune to Measles. This is because they *almost certainly got it as a child*.[^5]
+
+About half of children got measles by age 6, 90% of the population got it by age 15. To get it, you didn't need to touch infected surfaces or have someone cough in your face. The virus is airborne; it can be enough to walk into a room *hours after* an infected child was there. It is often estimated that if no one had immunity, the average infected person would infect 12-18 other people. Estimates vary widely, with some much higher estimates in the literature as well[^11]; regardless, it is surely one of the most contagious diseases in the world.
+
+[^11]: [The basic reproduction number (R0) of measles: a systematic review](https://pubmed.ncbi.nlm.nih.gov/28757186/)
+
+
+[^5]: CDC, Pink Book, [Chapter 13: Measles](https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-13-measles.html).
+
+The pre-vaccination period was marked by a fairly steady, extremely high number of cases, but there were dramatic improvements to medical care and nutrition and these led to a decrease in the mortality rate. For example, in 1926 there were 8,607 deaths from measles, with 6,746 among children less than 5 years old. In contrast, from 1956-1960 there were an average of 450 measles deaths per year.[^7]
+
+*editing note: could consider shortening/moving this note about the mortality rate*.
+
+
+[^6]: CDC, [Mortality Statistics, 1926](https://www.cdc.gov/nchs/data/vsushistorical/mortstatsh_1926.pdf); U.S. Census, [Population Estimates, 1926](https://www2.census.gov/programs-surveys/popest/tables/1900-1980/national/asrh/pe-11-1926.pdf)
+
+[^7]: [Measles Elimination in the United States](https://academic.oup.com/jid/article-abstract/189/Supplement_1/S1/820569)
+
+The first vaccine was licensed in 1963. Initially the recommendation was to get a single dose of vaccine, and this was not a perfectly effective strategy, but nonetheless resulted in an over 95% decrease in the number of annual cases. In 1989 it was recommended to get two doses, and this led to elimination of the disease in 2000.[^5] Today, outbreaks only occur in areas with lower than average vaccination rates, and cases in vaccinated or immune people are very rare.
+
+**The measles virus is absurdly contagious, but the MMR vaccine is absurdly effective**. To an unusual degree, the outcome of an exposure to measles is *determined by vaccination status*; if you aren't vaccinated, you'll probably get it, and if you are, you won't. Vaccination status is so important that it drowns out basically all other factors.
+
+Note that measles is normally a childhood disease, though the reasons for this have shifted over time. Before the vaccine, *basically all children got it*, and this made them immune from being reinfected later in life. These days, most adults are vaccinated, and if vaccination rates decline in an area it will be children who are most vulnerable in the case of an outbreak.
+
+### Local patterns
+
+This year's outbreak began in Gaines County in West Texas, where there is a large Old Colony Mennonite community with low vaccination rates. This community is fairly isolated from mainstream society, has a highly conservative ideology, uses minimal modern technology, and speaks a dialect of Low German; for all these reasons (and more), the community does not have much of a relationship with the medical system.[^4] We do not know exactly what the vaccination rate is in Gaines County, but it is clear that it is much lower than average.
+
+[^4]: [Measles outbreaks in the United States in 2025: Practice, policy, and the canary in the coalmine](https://pmc.ncbi.nlm.nih.gov/articles/PMC12135429/).
+
+**Local vaccination rates** are very important to understand susceptibility to an outbreak, and in some places they are dramatically  lower than the national average.
+
+These local patterns are more important than the national statistics. The number of Kindergarteners without full vaccination has increased
+slightly in the past few years, but not enough to be a dramatic problem. The national immunity rate remains quite high
 (around 95%, [according to
 WHO](https://immunizationdata.who.int/global/wiise-detail-page/measles-vaccination-coverage?CODE=USA&ANTIGEN=MCV2&YEAR=)).
 In fact, significant gains in the national vaccination rate have been made
@@ -92,13 +122,52 @@ since 2000, when Measles was declared eliminated from the U.S. Most people
 are vaccinated with two doses at a young age and considered immune for
 life, so when vaccination rates change, it is reflected first in younger
 age cohorts, and only gradually in the national rate.
-  
-That being said, increasing vaccination is basically the *single* tool we
-have to combat this disease. Unlike other infectious diseases like Flu and
-Covid, the vaccine is both extraordinarily effective and *far more*
-effective in practice than any other intervention [**link to background
-concepts**].
 
+*Editing: talk more about current vaccination rates here. What does low mean? what is average nationally?*
+
+
+### Global patterns
+
+Gaines County, Texas started off with no measles cases and is surrounded by areas with better vaccination rates. We can't be sure, but the outbreak seems likely to have come from overseas. In fact there were two cases in Houston early in the year linked to travel.[^10]
+
+*Editing: add example of places with low vaccination that avoided outbreaks so far*
+
+[^10]: Texas Health and Human Services, [Confirmed Case of Measles - January 2025
+](https://www.dshs.texas.gov/news-alerts/confirmed-case-measles-january-2025)
+
+There are a handful of countries around the world with unusually low vaccination rates and very large recent outbreaks. For example, Romania reported over 30,000 cases in 2024 and the outbreak has been continuing this year.[^8] According to WHO, the vaccination rate there (first dose) has declined from around 98% in 2000 to under 70% last year. There has been an influential and growing anti-vaccination movement there, making it difficult to improve coverage.
+
+[^8]: UNICEF, [European Region reports highest number of measles cases in more than 25 years](https://www.unicef.org/press-releases/european-region-reports-highest-number-measles-cases-more-25-years-unicef-whoeurope)
+
+[^9]: WHO, [Measles vaccination coverage data](https://immunizationdata.who.int/global/wiise-detail-page/measles-vaccination-coverage)
+
+Large outbreaks overseas have a big impact on local risk of an outbreak. Even though relatively few people travel overseas, each one transmits some amount of risk of starting an outbreak when they return back home. Since measles is so contagious, it is often sufficient for a single person to get infected overseas and then travel to a community with low vaccination.
+
+### What is going on in my community?
+
+Locally, there are basically four possible situations you might be in.
+
+Some places see a pattern of **intermittent sparks**. For example, here in Boston, it is known that someone with measles visited for a couple days back in June. Sometimes cases show up, and thinking of each one like a spark, they don't really catch because nearly everyone they encounter is immune. Occasionally there may be a tiny cluster that doesn't spread any further. This is the current state of most of the U.S., and it is basically the best we can aim for right now; to go further requires better global control.
+
+A small number of places are in a state of **rapid outbreak**. This is the dreaded epi curve, like this one from Gaines County: [insert graph]
+
+Typically this signifies that there is a community with vaccination rates well below average, and probably well below 90%. Once they get going, outbreaks in areas like this can be exceptionally difficult to control, because measles is just too contagious for the standard public health playbook to keep up (this includes isolation of active cases, contact tracing, notification and rapid vaccination of those who are exposed).
+
+A few other places are in a state of **unmaterialized outbreak**. This is just West Texas in late 2024; it hasn't happened yet, because the index case hasn't yet arrived. If your community is in this situation, the best way to avoid a rapid outbreak is to materially increase the vaccination rate. This is very hard work, sometimes beyond the public health system's capabilities, but sometimes it can be done.
+
+Finally, there are some communities with a pattern of **unsteady spread**. For example,
+
+*add example*
+
+This pattern is marked by some active transmission between unvaccinated people in the area, but a low enough proportion of susceptible individuals that spread remains very slow.
+
+These are places with the biggest opportunity for public health to make a difference. Prevention efforts are effective, because even small improvements to the vaccination rate can help move to the intermittent sparks regime. Response efforts are more effective than during rapid outbreaks because there is more time to ramp them up and less dramatic interventions can still materially improve the outcome.
+
+*Since these are important, list them*
+
+### Response
+
+*case studies*
 
 </div>
 <div>
@@ -111,13 +180,7 @@ concepts**].
 </div>
 </div>
 
-### Cases by U.S. county
 
 ${resize((width) => mapPlotZoom(cases_county, nation, states, {width}))}
-
-
-## Looking ahead
-
-
 
 ## Data notes
