@@ -29,6 +29,14 @@ const states = FileAttachment("data/states.json").json({typed: true});
 
 <div class="grid grid-cols-2"> <div>
 
+*I need to write something that makes it clear 1) why I think this is valuable and 2) to whom precisely it seems valuable. A critical requirement is to clear a basic bar of familiarity/knowing the code/credentials with that group.*
+
+*Ideas for 1: you are going to do the wrong thing in response; but how do I know what your model is? where's the evidence of that incorrect model, and is there a clear enough thread from those errors to actual harm in your town, school, hospital?*
+
+Notes
+
+- RFK jr & backlash - focus on benefits of vaccination, but isn't honest about impact of global situation; but is there a thread from that to actual harm? idk, it's a valid argument to say no.
+
 ## Recent Outbreaks
 
 The United States has been seeing a surge of measles cases in 2025. It is
