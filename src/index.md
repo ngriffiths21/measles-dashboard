@@ -29,13 +29,13 @@ const states = FileAttachment("data/states.json").json({typed: true});
 
 <div class="grid grid-cols-2"> <div>
 
-*I need to write something that makes it clear 1) why I think this is valuable and 2) to whom precisely it seems valuable. A critical requirement is to clear a basic bar of familiarity/knowing the code/credentials with that group.*
+The United States has had a surge of measles cases in 2025. Back in July, Your Local Epidemiologist wrote:
 
-*Ideas for 1: you are going to do the wrong thing in response; but how do I know what your model is? where's the evidence of that incorrect model, and is there a clear enough thread from those errors to actual harm in your town, school, hospital?*
+> **Measles is a canary in the coal mine**. When measles reappears in a country like the U.S., it signals that something has gone seriously wrong. This is a disease we had essentially eliminated—thanks to one of the safest and most effective vaccines in the history of medicine. But the way things are heading, the U.S. is at risk of losing its elimination status this year.
 
-Notes
+That article, like much other coverage, was clear that most individuals are not at risk for Measles, and that although it can be deadly or severe in some cases, many fully recover. Local leaders in town health departments, hospitals, and schools already have a standard playbook they use to respond to local cases of reportable illnesses, and they can also draw on resources provided at the state and federal levels. All these factors are good reasons to think of Measles as a problem that isn't devastating today, but that signals problems in the health system that could become much more serious if left unaddressed.
 
-- RFK jr & backlash - focus on benefits of vaccination, but isn't honest about impact of global situation; but is there a thread from that to actual harm? idk, it's a valid argument to say no.
+Unfortunately, we are already at a point where this view is inadequate for most local leaders, even if it remains very appropriate for a more general public audience. Local leaders should *not* think of Measles as a routine infectious disease. If they do, they will almost certainly underestimate the impacts of even a single incident case, leading to an ineffective response and potentially missing opportunities to prevent a small number of severe illnesses and deaths.
 
 ## Recent Outbreaks
 
