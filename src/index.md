@@ -36,7 +36,9 @@ That article, like much other coverage, accurately noted that most individuals a
 
 Unfortunately, we are already at a point where this view is inadequate for most local leaders, even if it remains very appropriate for a more general public audience. Local leaders should *not* think of Measles as a routine infectious disease. If they do, they will almost certainly underestimate the impacts of even a single incident case, leading to an ineffective response and potentially missing opportunities to prevent a small number of severe illnesses and deaths.
 
-## Measles is unusually contagious, and the vaccine is unusually effective
+## Measles is different from other diseases
+
+### Unusually contagious, unusually preventable
 
 The CDC Pink Book notes that people born before 1957 can be assumed immune to Measles. This is because they *almost certainly got it as a child*.[^5]
 
@@ -49,9 +51,6 @@ About half of children got measles by age 6, 90% of the population got it by age
 
 The pre-vaccination period was marked by a fairly steady, extremely high number of cases, but there were dramatic improvements to medical care and nutrition and these led to a decrease in the mortality rate. For example, in 1926 there were 8,607 deaths from measles, with 6,746 among children less than 5 years old. In contrast, from 1956-1960 there were an average of 450 measles deaths per year.[^7]
 
-*editing note: could consider shortening/moving this note about the mortality rate*.
-
-
 [^6]: CDC, [Mortality Statistics, 1926](https://www.cdc.gov/nchs/data/vsushistorical/mortstatsh_1926.pdf); U.S. Census, [Population Estimates, 1926](https://www2.census.gov/programs-surveys/popest/tables/1900-1980/national/asrh/pe-11-1926.pdf)
 
 [^7]: [Measles Elimination in the United States](https://academic.oup.com/jid/article-abstract/189/Supplement_1/S1/820569)
@@ -60,9 +59,15 @@ Then the first vaccine was licensed in 1963. It was ridiculously effective. Init
 
 **To an unusual degree, the outcome of an exposure to measles is determined by vaccination status**. If you aren't vaccinated, you'll probably get it, and if you are, you won't. Vaccination status is so important that it drowns out basically all other factors.
 
+Another critical aspect of Measles is that it is amenable to post-exposure prophylaxis, meaning vaccination *after* someone is exposed. The CDC recommends vaccination up to 72 hours after exposure.[^12] Why does this work?
+
+[^12]: CDC, [Measles Vaccine Recommendations](https://www.cdc.gov/measles/hcp/vaccine-considerations/index.html).
+
+The key is that Measles has a longer incubation period than many other diseases, with typically over 10 days between first exposure and the appearance of any symptoms. The first signs are usually some combination of fever, cough, runny nose and pink eye. Then the characteristic rash appears a few days after initial symptoms. Measles patients are most contagious around 4 days before the rash starts and up to 4 days after it ends. Because the incubation period is so long and because there is at least a week before a patient becomes contagious, it is a good idea to get vaccinated soon after exposure and this can potentially prevent infection before it has time to develop.
+
 Note that measles is normally a childhood disease, though the reasons for this have shifted over time. Before the vaccine, *basically all children got it*, and this made them immune from being reinfected later in life. These days, most adults are vaccinated, and if vaccination rates decline in an area it will be children who are most vulnerable in the case of an outbreak.
 
-## Measles illness is fairly severe
+### The illness is fairly severe
 
 As of November 4th, 2025, there were just under 1,700 confirmed cases in the U.S. for the year; this was enough to cause 200 hospitalizations (12% of cases) and 3 deaths. For comparison, one CDC study[^2] estimated that 5.7% of COVID-19 cases were hospitalized in the pre-vaccine period. (The rate in that study varies wildly by age, though. And of course it would have decreased once people got vaccinated, because many vaccinated people got infected but with more mild cases).
 
@@ -76,11 +81,30 @@ Measles has a range of impacts. It infects immune system cells and can lead to c
 
 Overall, the story of measles morbidity and mortality right now is one about a relatively small number of people at risk, and many people who are completely immune, but a serious problem nonetheless because of fairly severe impacts for those who are infected. This contrasts with diseases like COVID-19 and influenza which are more mild illnesses on average but affect huge numbers of people.
 
-## Rapid response can save lives
+### Public health is not always this helpful
 
+Many factors can hinder the public health system from succeeding in its goal to prevent disease and contain outbreaks:
 
+- The disease spreads fast or asymptomatically so that resources like tests, contact tracing, and quarantine are much less effective
+- It spreads slowly or is very mild, so that there isn't much urgency or political will
+- It mutates quickly and makes it impossible to develop a vaccine
+- It is new and scientists haven't had time to understand it
 
-## What is happening in my community now?
+Measles not only falls on the better side of each of these factors, it is a nearly ideal version of them. It has a long incubation period; tests, quarantine, and even prophylactic vaccination are highly impactful. Even a single case makes local news. It does not mutate rapidly,[^13] and has one of the most effective vaccines ever developed. It is very old, and well understood. All this means that public health intervention is very effective. But with power comes responsibility.
+
+[^13]: This is somewhat surprising because the virus is similar to other viruses that mutate more quickly (it contains RNA, which is not as stable as DNA). [Some recent research](https://www.cell.com/cell-reports-medicine/fulltext/S2666-3791(21)00041-0) shows that the typical immune response to measles targets up to 8 sites on just one of its proteins, and suggests that even if several of the sites were changed by mutation, the immune system would have plenty of working antibodies left to neutralize the infection.
+
+## Lowell Community Health Center
+
+In November 2018, Lowell Community Health Center in Lowell, Massachusetts saw a child who had returned from a trip with measles. There wasn't anything remarkable about the appointment or care of the patient herself; what was remarkable was what followed. Apoorva Mandavilli wrote for Undark:
+
+> Indeed, the arrival of mother and child set off a chain of events and triggered longstanding but rarely tested protocols aimed at containing a measles outbreak. It involved hundreds of staff not just at the Lowell Community Health Center, but also the Massachusetts Department of Public Health (DPH), the City of Lowell Health Department, and the local hospital — with thousands of emails and a weeklong flurry of activity that strained the center’s capacities to the limit. They would need to figure out exactly who had been in the lobby, in the pharmacy, and in the pediatrics department during the crucial time window when the child with measles was in the facility. They would have to get back in touch with the nearly 550 people who may have been exposed as they moved through the center’s spaces, and locate enough vaccine supplies to immunize anyone who needed it, all within 72 hours of the initial exposure.
+
+This is very different from the kind of response they would have mounted against a COVID or flu exposure. This is partly because measles is wildly contagious, and a serious threat to anyone who crossed paths with the patient; it is partly because there was *a lot that could be done to help*.
+
+Most schools, community centers, public transit systems, restaurants, libraries, camps, and other places where people congregate are both at risk for a large-scale measles exposure some day, and much less equipped to respond if it occurs. But there are opportunities for local leaders in all these spaces to do some basic preparation.
+
+## Understand what to expect in your community
 
 ### Local patterns determine impact
 
@@ -119,15 +143,19 @@ Large outbreaks overseas have a big impact on local risk of an outbreak. Even th
 
 Also, most cases happened early in the year, which is typical: the disease is highly seasonal with cases typically peaking in winter and spring. So, this year's summer months may have had fewer cases than the first half of the year, but were still quite high when you consider the seasonal pattern. Compared to previous years, the outbreak still looks like it's going strong.
 
-### Possible scenarios
+### Prepare for possible scenarios
 
 Locally, there are basically four possible situations you might be in.
 
-Some places see a pattern of **intermittent sparks**. For example, here in Boston, it is known that someone with measles visited for a couple days back in June. Sometimes cases show up, and thinking of each one like a spark, they don't really catch because nearly everyone they encounter is immune. Occasionally there may be a tiny cluster that doesn't spread any further. This is the current state of most of the U.S., and it is basically the best we can aim for right now; to go further requires better global control.
+Some places see a pattern of **intermittent sparks**. For example, here in Boston, it is known that someone with measles visited for a couple days back in June. Sometimes cases show up, and thinking of each one like a spark, they don't really catch because nearly everyone they encounter is immune. Occasionally there may be a tiny cluster that doesn't spread any further. This is the current state of most of the U.S.
 
-A small number of places are in a state of **rapid outbreak**. This is the dreaded epi curve, like this one from Gaines County: [insert graph]
+*Editing note: here is where you list preparatory steps; we contradicted the idea that this isn't important*.
+
+A small number of places are already in a state of **rapid outbreak**. This is the dreaded epi curve, like this one from Gaines County: [insert graph]
 
 Typically this signifies that there is a community with vaccination rates well below average, and probably well below 90%. Once they get going, outbreaks in areas like this can be exceptionally difficult to control, because measles is just too contagious for the standard public health playbook to keep up (this includes isolation of active cases, contact tracing, notification and rapid vaccination of those who are exposed).
+
+*can I say anything about how control is or is not feasible, in line with above?*
 
 A few other places are in a state of **unmaterialized outbreak**. This is just West Texas in late 2024; it hasn't happened yet, because the index case hasn't yet arrived. If your community is in this situation, the best way to avoid a rapid outbreak is to materially increase the vaccination rate. This is very hard work, sometimes beyond the public health system's capabilities, but sometimes it can be done.
 
@@ -140,10 +168,6 @@ This pattern is marked by some active transmission between unvaccinated people i
 These are places with the biggest opportunity for public health to make a difference. Prevention efforts are effective, because even small improvements to the vaccination rate can help move to the intermittent sparks regime. Response efforts are more effective than during rapid outbreaks because there is more time to ramp them up and less dramatic interventions can still materially improve the outcome.
 
 *Since these are important, list them*
-
-### Response
-
-*case studies*
 
 </div>
 <div>
