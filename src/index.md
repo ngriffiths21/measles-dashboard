@@ -158,29 +158,20 @@ Another pattern is seasonal: most cases happen early in the year, typically peak
 
 ## Prepare for possible scenarios
 
-Locally, there are basically four possible situations you might be in.
+Loosely speaking, there are three situations a community might be in.
 
-Some places see a pattern of **intermittent sparks**. For example, here in Boston, it is known that someone with measles visited for a couple days back in June. Sometimes cases show up, and thinking of each one like a spark, they don't really catch because nearly everyone they encounter is immune. Occasionally there may be a tiny cluster that doesn't spread any further. This is the current state of most of the U.S.
+Some places see a pattern of **intermittent sparks**. For example, here in Boston, it is known that someone with measles visited for a couple days back in June. In places like this the vaccination rate is very high, around 95% or even higher. Sometimes cases appear, and thinking of each one like a spark, they don't really ignite because nearly everyone they encounter is immune. Occasionally there may be a tiny cluster that doesn't spread any further. This is the current state of a lot of the U.S.
 
-*Editing note: here is where you list preparatory steps; we contradicted the idea that this isn't important*.
+It is tempting to treat measles as benign in these areas, but even a single case can call for a vigorous response, and vigorous responses require preparation. Like Lowell Community Health Center demonstrated, it is worth answering questions like:
 
-A small number of places are already in a state of **rapid outbreak**. This is the dreaded epi curve, like this one from Gaines County: [insert graph]
+- Do I know who is vaccinated or immune in my school, health center, community organization, etc.? If I needed to find this information out, would I be able to?
+- Is it possible that there is a subgroup with a low vaccination rate, and at risk for rapid transmission, even if my town overall is well protected?
+- If my organization were exposed to measles, would we be prepared to identify who exactly was exposed? Could we help affected people get vaccinated as quickly as possible? Are we connected with the local health department, hospitals, and other resources in a way that would help?
 
-Typically this signifies that there is a community with vaccination rates well below average, and probably well below 90%. Once they get going, outbreaks in areas like this can be exceptionally difficult to control, because measles is just too contagious for the standard public health playbook to keep up (this includes isolation of active cases, contact tracing, notification and rapid vaccination of those who are exposed).
+One aspect of the Lowell Community Health Center exposure that stands out is that the health center expected more support from local and state health officials, and essentially got only advice. All of the work of communicating, figuring out who was exposed, gathering vaccination information, and setting up and running a vaccine clinic was done by the health center. Of course, most organizations do not have the resources to do all this, but resources are often scarce and they are likely to be in charge of any pieces they are capable of.
 
-*can I say anything about how control is or is not feasible, in line with above?*
+Next, a small number of places are already in a state of **sustained outbreak**. This is what happened in West Texas early this year. It signifies that there is a community with vaccination rates well below average, and probably well below 90%. Once outbreaks like this grow, they can be exceptionally difficult to control, particularly if the community remains hesitant to get vaccinated. However, raising the local vaccination rate remains the single most important tool to reduce the scale of an outbreak, and should be done as quickly as possible. Contact tracing and post-exposure vaccination can also help contain it.
 
-A few other places are in a state of **unmaterialized outbreak**. This is just West Texas in late 2024; it hasn't happened yet, because the index case hasn't yet arrived. If your community is in this situation, the best way to avoid a rapid outbreak is to materially increase the vaccination rate. This is very hard work, sometimes beyond the public health system's capabilities, but sometimes it can be done.
-
-Finally, there are some communities with a pattern of **unsteady spread**. For example,
-
-*add example*
-
-This pattern is marked by some active transmission between unvaccinated people in the area, but a low enough proportion of susceptible individuals that spread remains very slow.
-
-These are places with the biggest opportunity for public health to make a difference. Prevention efforts are effective, because even small improvements to the vaccination rate can help move to the intermittent sparks regime. Response efforts are more effective than during rapid outbreaks because there is more time to ramp them up and less dramatic interventions can still materially improve the outcome.
-
-*Since these are important, list them*
-
+Other communities are in a state of **unmaterialized outbreak**. This is just West Texas in late 2024; a relatively small number of cases will be sufficient to ignite an outbreak, but it hasn't happened yet, because the index case hasn't yet arrived. If your community is in this situation, the same principle applies: the strongest tool is to increase the local vaccination rate. This is hard work, but worthwhile given that outbreaks around the country and the world could spread locally at any time.
 
 ## Data notes
