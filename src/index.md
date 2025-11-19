@@ -174,4 +174,8 @@ Next, a small number of places are already in a state of **sustained outbreak**.
 
 Other communities are in a state of **unmaterialized outbreak**. This is just West Texas in late 2024; a relatively small number of cases will be sufficient to ignite an outbreak, but it hasn't happened yet, because the index case hasn't yet arrived. If your community is in this situation, the same principle applies: the strongest tool is to increase the local vaccination rate. This is hard work, but worthwhile given that outbreaks around the country and the world could spread locally at any time.
 
+## A little is better than none at all
+
+Out of context, making preparations like this and trying to emulate the response of a well-staffed community health center seems out of touch with the reality of what small organizations are capable of. But when a case appears, the contagiousness and severity of the disease will make it feel urgent, no matter what type of organization is impacted. The leaders involved will quickly feel pressure to act, and even small actions -- for example, simply being aware that an unvaccinated person should get a vaccine soon after exposure -- could save a life.
+
 ## Data notes
