@@ -5,7 +5,7 @@ toc: true
 ---
 
 ```js
-import {casePlot, smallPlot, mapPlot, mapPlotZoom} from "./components/casePlot.js";
+import {casePlot, vaxPlot, mapPlotZoom} from "./components/plot.js";
 import {utcParse} from "npm:d3-time-format";
 ```
 
@@ -20,7 +20,6 @@ function coerceTypes(d) {
 const cases = FileAttachment("data/measles-cases.csv").csv({typed: true});
 const vax_us = FileAttachment("data/vaccine-coverage-us.csv").csv({typed: true}).then((D) => D.map(coerceTypes));
 const cases_county = FileAttachment("data/measles-cases-county.json").json({typed: true});
-const nation = FileAttachment("data/nation.json").json({typed: true});
 const states = FileAttachment("data/states.json").json({typed: true});
 ```
 
@@ -40,7 +39,7 @@ This is an appropriate view for a general public audience, but it is inadequate 
 
 
 <div class="card" style="max-width: 600px;">
-  ${resize((width) => smallPlot(cases, "Cases", {width}))}
+  ${resize((width) => casePlot(cases, width))}
 </div>
 
 
@@ -134,7 +133,7 @@ The 2025 outbreak originated in West Texas and spread to New Mexico, Oklahoma, a
     Outbreaks](https://www.cdc.gov/measles/data-research/index.html). 
 
 
-${resize((width) => mapPlotZoom(cases_county, nation, states, {width}))}
+${resize((width) => mapPlotZoom(cases_county, states, width))}
 
 Specifically, the outbreak first took off in Gaines County, Texas, where there is a large Old Colony Mennonite community with low vaccination rates. This community is fairly isolated from mainstream society, has a highly conservative ideology, uses minimal modern technology, and speaks a dialect of Low German; for all these reasons (and more), the community does not have a strong relationship with the medical system.[^4] We do not know exactly what the vaccination rate is in Gaines County, but it is clear that it is much lower than average.
 
@@ -147,7 +146,7 @@ This rule of thumb applies far more to **local vaccination rates** than to state
 For example, the national data are not very concerning in isolation. The the number of Kindergarteners without full vaccination has increased slightly in the past few years, but not enough to be a dramatic problem. The national immunity rate remains quite high (around 95%, [according to WHO](https://immunizationdata.who.int/global/wiise-detail-page/measles-vaccination-coverage?CODE=USA&ANTIGEN=MCV2&YEAR=)). In fact, significant gains in the national vaccination rate have been made since 2000, when Measles was declared eliminated from the U.S. Most people are vaccinated with two doses at a young age and considered immune for life, so when vaccination rates change, it is reflected first in younger age cohorts, and only gradually in the national rate.
 
 <div class="card" style="max-width: 600px;">
-  ${resize((width) => smallPlot(vax_us, "Vaccinations", {width}))}
+  ${resize((width) => vaxPlot(vax_us, width))}
 </div>
 
 
