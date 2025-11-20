@@ -135,6 +135,8 @@ The 2025 outbreak originated in West Texas and spread to New Mexico, Oklahoma, a
 
 ${resize((width) => mapPlotZoom(cases_county, states, width))}
 
+> Reported measles cases by county since January 2025.
+
 Specifically, the outbreak first took off in Gaines County, Texas, where there is a large Old Colony Mennonite community with low vaccination rates. This community is fairly isolated from mainstream society, has a highly conservative ideology, uses minimal modern technology, and speaks a dialect of Low German; for all these reasons (and more), the community does not have a strong relationship with the medical system.[^4] We do not know exactly what the vaccination rate is in Gaines County, but it is clear that it is much lower than average.
 
 [^4]: [Measles outbreaks in the United States in 2025: Practice, policy, and the canary in the coalmine](https://pmc.ncbi.nlm.nih.gov/articles/PMC12135429/).
