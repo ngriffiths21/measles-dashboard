@@ -3,7 +3,7 @@ import MarkdownItFootnote from "markdown-it-footnote";
 // See https://observablehq.com/framework/config for documentation.
 export default {
   // The app’s title; used in the sidebar and webpage titles.
-  title: "Measles Dashboard",
+  //title: "",
 
   // The pages and sections in the sidebar. If you don’t specify this option,
   // all pages will be listed in alphabetical order. Listing pages explicitly
@@ -34,7 +34,7 @@ export default {
   // output: "dist", // path to the output root for build
   // search: true, // activate search
   // linkify: true, // convert URLs in Markdown to links
-  // typographer: false, // smart quotes and other typographic improvements
+  typographer: true, // smart quotes and other typographic improvements
   // preserveExtension: false, // drop .html from URLs
   // preserveIndex: false, // drop /index from URLs
 
