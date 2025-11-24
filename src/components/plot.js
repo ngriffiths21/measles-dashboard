@@ -27,8 +27,79 @@ export function vaxPlot(data, width) {
     })
 }
 
-export function mapPlotZoom(countymesh, statemesh, width) {
-    const color = d3.scaleQuantize([1, 10], d3.schemeReds[9]);
+
+function showToolTip(textG, type, path, textCanvas) {
+    return ((ev) => {
+        const countyData = d3.select(ev.target).data()[0]; // access geo feature data
+        if (countyData.properties === undefined) return;
+
+        const countyName = countyData.properties.NAME + ", "
+            + countyData.properties.STATE_NAME;
+        
+        let value;
+        if (type === "Cases") {
+            value = countyData.properties.cases;
+        } else {
+            value = countyData.properties.vaxrate;
+            if (value === 0) {
+                value = "Not reported"
+            }
+        }
+        const tooltipAnchorLoc = path.centroid(countyData);
+
+        const anchorTransform = new d3.ZoomTransform(
+            // reverse the outer canvas's scaling
+            1 / d3.zoomTransform(textCanvas.node()).k, 
+            tooltipAnchorLoc[0],
+            tooltipAnchorLoc[1]
+        );
+
+        textG.attr("transform", anchorTransform);
+
+        textG.append("text")
+            .attr("x", 20)
+            .attr("y", -35)
+            .text(`${countyName}`);
+
+        textG.append("text")
+            .attr("x", 20)
+            .attr("y", -10)
+            .text(`${type}: ${value}`);
+
+        // draw rectangle around text
+        const textRect = textG.node().getBBox();
+
+        textG.insert("rect", "text")
+            .attr("x", `${textRect.x - 5}`)
+            .attr("y", `${textRect.y - 5}`)
+            .attr("width", `${textRect.width + 10}`)
+            .attr("height", `${textRect.height + 10}`)
+            .attr("fill", "white")
+            .attr("stroke", "black");
+    });
+}
+
+function closeToolTip(textG) {
+    return ((_ev) => {
+        textG.selectAll("rect")
+            .remove();
+        textG.selectAll("text")
+            .remove();
+    });
+}
+
+
+export function mapPlotZoom(type, countymesh, statemesh, width) {
+    const colorCases = d3.scaleQuantize([1, 10], d3.schemeReds[9]);
+    console.log(d3.schemeReds[9].reverse());
+    const colorVaxScale = d3.scaleQuantize([0.6, 1], d3.schemeReds[9].toReversed());
+    const colorVax = (input) => {
+        if (input === 0) {
+            return "#cccccc";
+        }
+        return colorVaxScale(input);
+    }
+    console.log(colorVax(0.1), colorVax(0.6));
     const path = d3.geoPath(d3.geoAlbersUsa());
 
     const svg = d3.create("svg")
@@ -48,15 +119,25 @@ export function mapPlotZoom(countymesh, statemesh, width) {
     // provides hover event anchored coordinate system
     const textG = textCanvas.append("g");
 
+    const showToolTipHandler = showToolTip(textG, type, path, textCanvas);
+    const closeToolTipHandler = closeToolTip(textG);
+
     mapCanvas.selectAll("path") // draw counties and attach tooltip handler
         .data(countymesh.features)
         .join("path")
-        .attr("fill", d => color(d.properties.cases))
         .attr("stroke", "#C0C0C0")
         .attr("stroke-width", 0.25)
         .attr("d", path)
-        .on("mouseover", showToolTip)
-        .on("mouseout", closeToolTip);
+        .on("mouseover", showToolTipHandler)
+        .on("mouseout", closeToolTipHandler);
+
+    if (type === "Cases") {
+        mapCanvas.selectAll("path")
+            .attr("fill", d => colorCases(d.properties.cases))
+    } else if (type === "Vaccination rate") {
+        mapCanvas.selectAll("path")
+            .attr("fill", d => colorVax(d.properties.vaxrate))
+    }
 
     mapCanvas.append("path") // draw states
         .datum(statemesh)
@@ -69,58 +150,13 @@ export function mapPlotZoom(countymesh, statemesh, width) {
     
     const boundRect = [[0,0], [975, 610]];
 
-    svg.call(d3.zoom().scaleExtent([1, 3]).translateExtent(boundRect).on("zoom", (ev) => {
+    svg.call(d3.zoom().scaleExtent([1, 6]).translateExtent(boundRect).on("zoom", (ev) => {
         if (!isNaN(ev.transform.x)) {
             mapCanvas.attr("transform", ev.transform);
             textCanvas.attr("transform", ev.transform);
         }
     }));
 
-    function showToolTip(ev) {
-        const countyData = d3.select(ev.target).data()[0]; // access geo feature data
-        if (countyData.properties === undefined) return;
-
-        const countyName = countyData.properties.NAME + ", " + countyData.properties.STATE_NAME;
-        const cases = countyData.properties.cases;
-        const tooltipAnchorLoc = path.centroid(countyData);
-
-        const anchorTransform = new d3.ZoomTransform(
-            1 / d3.zoomTransform(svg.node()).k, // reverse the svg's scaling
-            tooltipAnchorLoc[0],
-            tooltipAnchorLoc[1]
-        );
-
-        textG.attr("transform", anchorTransform);
-
-        textG.append("text")
-            .attr("x", 20)
-            .attr("y", -35)
-            .text(`${countyName}`);
-
-        textG.append("text")
-            .attr("x", 20)
-            .attr("y", -10)
-            .text(`Cases: ${cases}`);
-
-        // draw rectangle around text
-        const textRect = textG.node().getBBox();
-
-        textG.insert("rect", "text")
-            .attr("x", `${textRect.x - 5}`)
-            .attr("y", `${textRect.y - 5}`)
-            .attr("width", `${textRect.width + 10}`)
-            .attr("height", `${textRect.height + 10}`)
-            .attr("fill", "white")
-            .attr("stroke", "black")
-            .node();
-    }
-
-    function closeToolTip(ev) {
-        textG.selectAll("rect")
-            .remove();
-        textG.selectAll("text")
-            .remove();
-    }
 
     return svg.node();
 }

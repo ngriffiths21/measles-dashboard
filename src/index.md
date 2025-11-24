@@ -132,12 +132,27 @@ The 2025 outbreak originated in West Texas and spread to New Mexico, Oklahoma, a
 [^1]: CDC, [Measles Cases and
     Outbreaks](https://www.cdc.gov/measles/data-research/index.html). 
 
+```js
+const mapTypeInput = Inputs.radio(["Cases", "Vaccination rate"], {value: "Cases"});
+const mapType = Generators.input(mapTypeInput);
+```
 
-${resize((width) => mapPlotZoom(cases_county, states, width))}
+${display(mapTypeInput)}
 
-> Reported measles cases by county since January 2025.
+${resize((width) => mapPlotZoom(mapType, cases_county, states, width))}
 
-Specifically, the outbreak first took off in Gaines County, Texas, where there is a large Old Colony Mennonite community with low vaccination rates. This community is fairly isolated from mainstream society, has a highly conservative ideology, uses minimal modern technology, and speaks a dialect of Low German; for all these reasons (and more), the community does not have a strong relationship with the medical system.[^4] We do not know exactly what the vaccination rate is in Gaines County, but it is clear that it is much lower than average.
+```js
+let text;
+if (mapType === "Cases") {
+    text = html`Reported measles cases by county since January 2025. Data from <a href="https://github.com/CSSEGISandData/measles_data">JHU Measles Data Repository</a>. See data notes.`
+} else if (mapType === "Vaccination rate") {
+    text = html`Vaccination rate by county as of the 2022-23 school year. Data from <a href="https://github.com/CSSEGISandData/MMR_data">JHU Trends in County-Level MMR Vaccination</a>. County level data not available for all states. See data notes.`
+}
+```
+
+> ${text}
+
+Specifically, the outbreak first took off in Gaines County, Texas, where there is a large Old Colony Mennonite community with low vaccination rates. This community is fairly isolated from mainstream society, has a highly conservative ideology, uses minimal modern technology, and speaks a dialect of Low German; for all these reasons (and more), the community does not have a strong relationship with the medical system.[^4] We do not know exactly what the vaccination rate is in this community, but it is clear that it was much lower than average when the outbreak began.
 
 [^4]: [Measles outbreaks in the United States in 2025: Practice, policy, and the canary in the coalmine](https://pmc.ncbi.nlm.nih.gov/articles/PMC12135429/).
 
@@ -198,3 +213,5 @@ Weekly measles cases: CDC, [Measles Cases and Outbreaks](https://www.cdc.gov/mea
 County level measles cases: [JHU Measles Tracking Team Data Repository](https://github.com/CSSEGISandData/measles_data/) at Johns Hopkins University. Data are compiled individually from state and county authorities and local news reports.
 
 Vaccination rate among Kindergartners: CDC data table, [Vaccination Coverage and Exemptions among Kindergartners](https://data.cdc.gov/Vaccinations/Vaccination-Coverage-and-Exemptions-among-Kinderga/ijqb-a7ye/about_data).
+
+County level measles vaccination: [JHU Trends in County-Level MMR Vaccination](https://github.com/CSSEGISandData/MMR_data) by Ensheng Dong, Samee Saiyed, Andreas Nearchou, Yamato Okura, and Lauren M. Gardner at Johns Hopkins.
