@@ -122,7 +122,8 @@ export function mapPlotZoom(type, countymesh, statemesh, width) {
     const showToolTipHandler = showToolTip(textG, type, path, textCanvas);
     const closeToolTipHandler = closeToolTip(textG);
 
-    mapCanvas.selectAll("path") // draw counties and attach tooltip handler
+    mapCanvas.append("g") // draw counties and attach tooltip handler
+        .selectAll("path") 
         .data(countymesh.features)
         .join("path")
         .attr("stroke", "#C0C0C0")
@@ -139,8 +140,9 @@ export function mapPlotZoom(type, countymesh, statemesh, width) {
             .attr("fill", d => colorVax(d.properties.vaxrate))
     }
 
-    mapCanvas.append("path") // draw states
-        .datum(statemesh)
+    mapCanvas.append("g") // draw states
+        .selectAll("path")
+        .data(statemesh.features)
         .join("path")
         .attr("fill", "none")
         .attr("stroke", "black")
