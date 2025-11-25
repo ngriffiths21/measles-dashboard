@@ -1,6 +1,6 @@
 ---
 theme: light
-title: "Measles response: There is much more we can do"
+title: "Preparing for measles at the local level"
 toc: true
 ---
 
@@ -23,19 +23,19 @@ const cases_county = FileAttachment("data/measles-cases-county.json").json({type
 const states = FileAttachment("data/states.json").json({typed: true});
 ```
 
-# Measles response: There is much more we can do
+# Preparing for measles at the local level
 
-*By Nicholas Griffiths*
+*Nicholas Griffiths*
 
 *November 20, 2025*
 
-The United States has had a surge of measles cases in 2025. On July 11, 2025, [Your Local Epidemiologist](https://yourlocalepidemiologist.substack.com/p/its-not-just-about-measles) wrote:
+The United States has had a surge of measles cases in 2025. In April, the New York Times [published an op-ed](https://www.nytimes.com/2025/04/02/opinion/measles-epidemic-texas.html) by Michael Mina, a leading measles expert at Harvard School of Public Health. He wrote:
 
-> **Measles is a canary in the coal mine**. When measles reappears in a country like the U.S., it signals that something has gone seriously wrong. This is a disease we had essentially eliminated—thanks to one of the safest and most effective vaccines in the history of medicine. But the way things are heading, the U.S. is at risk of losing its elimination status this year.
+> We used to think of measles outbreaks in the United States as isolated events: short-lived and confined to close-knit communities with low vaccination rates. A flare here, a bubble there. But as those bubbles grow and converge, the United States could be at risk for tens of thousands of cases.
 
-That article, like much other coverage, accurately noted that the scale and impact of Measles outbreaks today is lower than influenza and COVID, since so many people are immune. Local leaders in town health departments, hospitals, and schools already have a standard playbook they use to respond to local cases of reportable illnesses, and they can also draw on resources provided at the state and federal levels. All these factors are good reasons to think of Measles as a problem that isn't devastating today, but that signals problems in the health system that could become much more serious if left unaddressed.
+The op-ed is a call to take the threat of measles seriously, to do what we can to improve vaccination rates, to rebuild trust in the public health system. Mina describes some of the serious harms measles can cause and the impacts of large outbreaks in Europe. The protection the U.S. worked so hard to achieve "is now unraveling," he writes—if vaccination rates don't improve, more people will needlessly die from a preventable disease.
 
-This is an appropriate view for a general public audience, but it is inadequate for local leaders. Local leaders should not think of Measles as a routine infectious disease. If they do, they will almost certainly underestimate the impacts of even a single incident case, leading to an ineffective response and potentially missing opportunities to prevent a small number of severe illnesses and deaths.
+This is a very appropriate message for a general public audience, and [many](https://yourlocalepidemiologist.substack.com/p/its-not-just-about-measles) [other](https://www.statnews.com/2025/06/24/us-measles-elimination-status-vaccine-rates-cdc-mmr-rate/) [writers](https://www.usatoday.com/story/opinion/2025/03/04/measles-outbreak-texas-mmr-vaccine/81146579007/) have focused on the consequences of the country losing its control over this disease. Unfortunately, the discussion isn't very helpful if you are a local leader: if your school, health center, or local organization gets exposed to measles, there is a lot more you will want to know.
 
 
 <div class="card" style="max-width: 600px;">
@@ -90,7 +90,7 @@ Measles has a range of impacts. It infects immune system cells and can lead to c
 
 Overall, the story of measles morbidity and mortality is about a relatively small number of people who are currently at risk, and many people who are completely immune, but nonetheless it is a serious problem because those who get infected are impacted fairly severely. This contrasts with diseases like COVID-19 and influenza, which are more mild illnesses on average, but affect large numbers of people.
 
-### Public health is not always this helpful
+### Prompt response is unusually effective
 
 Many factors can hinder the public health system from succeeding in its goal to prevent disease and contain outbreaks:
 
