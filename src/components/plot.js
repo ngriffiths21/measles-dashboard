@@ -41,8 +41,8 @@ function showToolTip(textG, type, path, textCanvas) {
             value = countyData.properties.cases;
         } else {
             value = (countyData.properties.vaxrate * 100).toFixed(1) + "%";
-            if (value === 0) {
-                value = "Not reported"
+            if (value === "0.0%") {
+                value = "Not reported";
             }
         }
         const tooltipAnchorLoc = path.centroid(countyData);
