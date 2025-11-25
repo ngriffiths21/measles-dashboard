@@ -27,7 +27,7 @@ const states = FileAttachment("data/states.json").json({typed: true});
 
 *Nicholas Griffiths*
 
-*November 20, 2025*
+*November 25, 2025*
 
 The United States has had a surge of measles cases in 2025. In April, the New York Times [published an op-ed](https://www.nytimes.com/2025/04/02/opinion/measles-epidemic-texas.html) by Michael Mina, a leading measles expert at Harvard School of Public Health. He wrote:
 

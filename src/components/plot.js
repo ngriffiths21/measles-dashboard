@@ -40,7 +40,7 @@ function showToolTip(textG, type, path, textCanvas) {
         if (type === "Cases") {
             value = countyData.properties.cases;
         } else {
-            value = countyData.properties.vaxrate;
+            value = (countyData.properties.vaxrate * 100).toFixed(1) + "%";
             if (value === 0) {
                 value = "Not reported"
             }
