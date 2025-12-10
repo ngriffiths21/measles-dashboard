@@ -16,14 +16,14 @@ export function casePlot(data, width) {
 
 export function vaxPlot(data, width) {
     return Plot.plot({
-        title: "% of Kindergarteners without vaccination, United States, 2014–2024",
+        title: "% of Kindergarteners who got vaccinated, United States, 2014–2024",
         width,
         height: 150,
-        y: { domain: [0, 8], grid: false, label: "Unvaccinated %" },
+        y: { domain: [80, 100], grid: false, label: "Vaccination rate" },
         x: { label: null },
         marks: [
-            Plot.lineY(data, { y: "Unvaccinated", x: "Year" })
-        ]
+            Plot.lineY(data, { y: "Estimate (%)", x: "Year", tip: { format: { x: (d) => `${d.getFullYear()}`, y: (d) => `${d}%`}} })
+        ],
     })
 }
 

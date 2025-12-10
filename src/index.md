@@ -6,11 +6,11 @@ toc: true
 
 ```js
 import {casePlot, vaxPlot, mapPlotZoom} from "./components/plot.js";
-import {utcParse} from "npm:d3-time-format";
+import {timeParse} from "npm:d3-time-format";
 ```
 
 ```js
-const parseDate = utcParse("%Y");
+const parseDate = timeParse("%Y");
 
 function coerceTypes(d) {
   d.Year = parseDate(d.Year);
@@ -132,6 +132,7 @@ const mapTypeInput = Inputs.radio(["Cases", "Vaccination rate"], {value: "Cases"
 const mapType = Generators.input(mapTypeInput);
 ```
 
+<div class="card" style="max-width:600px;">
 ${display(mapTypeInput)}
 
 ${resize((width) => mapPlotZoom(mapType, cases_county, states, width))}
@@ -146,6 +147,7 @@ if (mapType === "Cases") {
 ```
 
 > ${text}
+</div>
 
 Specifically, the outbreak first took off in Gaines County, Texas, where there is a large Old Colony Mennonite community with low vaccination rates. This community is fairly isolated from mainstream society, has a highly conservative ideology, uses minimal modern technology, and speaks a dialect of Low German; for all these reasons (and more), the community does not have a strong relationship with the medical system.[^4] We do not know exactly what the vaccination rate is in this community, but it is clear that it was much lower than average when the outbreak began.
 
@@ -155,7 +157,7 @@ Health leaders often set a target of 95% for vaccination coverage, which comes f
 
 This rule of thumb applies far more to **local vaccination rates** than to statewide or national data.
 
-For example, the national data are not very concerning in isolation. The the number of Kindergarteners without full vaccination has increased slightly in the past few years, but not enough to be a dramatic problem. The national immunity rate remains quite high (around 95%, [according to WHO](https://immunizationdata.who.int/global/wiise-detail-page/measles-vaccination-coverage?CODE=USA&ANTIGEN=MCV2&YEAR=)). In fact, significant gains in the national vaccination rate have been made since 2000, when Measles was declared eliminated from the U.S. Most people are vaccinated with two doses at a young age and considered immune for life, so when vaccination rates change, it is reflected first in younger age cohorts, and only gradually in the national rate.
+For example, the national data are not very concerning in isolation. The number of fully vaccinated Kindergarteners has dropped slightly in the past few years, but not enough to be a dramatic problem. The national immunity rate remains quite high (around 95%, [according to WHO](https://immunizationdata.who.int/global/wiise-detail-page/measles-vaccination-coverage?CODE=USA&ANTIGEN=MCV2&YEAR=)). In fact, significant gains in the national vaccination rate have been made since 2000, when Measles was declared eliminated from the U.S. Most people are vaccinated with two doses at a young age and considered immune for life, so when vaccination rates change, it is reflected first in younger age cohorts, and only gradually in the national rate.
 
 <div class="card" style="max-width: 600px;">
   ${resize((width) => vaxPlot(vax_us, width))}
@@ -182,20 +184,25 @@ There are a handful of countries around the world with unusually low vaccination
 
 Another general pattern to emphasize is seasonal: most cases happen early in the year, typically peaking in winter and spring. In fact, this year's summer months may have had fewer cases than the first half of the year, but were still quite high compared to the same months in previous years.
 
-What happens after an exposure depends on the local vaccination rate. In some areas there is a pattern of **intermittent sparks**. For example, here in Boston, it is known that someone with measles visited for a couple days back in June. Most neighboring towns have vaccination rates around 95% or even higher. In areas like this, sometimes cases appear, and thinking of each one like a spark, they don't really ignite because nearly everyone they encounter is immune. Occasionally there may be a tiny cluster that doesn't spread any further. This is the current state of a lot of the U.S.
+What happens after an exposure depends on the local vaccination rate. In some areas there is a pattern of **intermittent sparks**. For example, in Boston, it is known that [someone with measles visited](https://www.boston.gov/news/person-measles-visited-boston) for a couple days back in June. Most neighboring towns have vaccination rates around 95% or even higher. In areas like this, sometimes cases appear, and thinking of each one like a spark, they don't really ignite because nearly everyone they encounter is immune. Occasionally there may be a tiny cluster that doesn't spread any further. This is the current state of a lot of the U.S.
 
-It is tempting to treat measles as benign in these areas, but even a single case can call for a vigorous response, and vigorous responses require preparation. It is worth asking and answering questions like:
+It is tempting to treat measles as benign in these areas, but even a single case can call for a vigorous response, and vigorous responses require preparation. It is worth asking and answering questions such as:
 
 - Do I know who is vaccinated or immune in my school, health center, community organization, etc.? If I needed to find this information out, would I be able to?
 - Is it possible that there is a subgroup with a low vaccination rate, and at risk for rapid transmission, even if my town overall is well protected?
-- If my organization were exposed to measles, would we be prepared to identify who exactly was exposed? Could we help affected people get vaccinated as quickly as possible? Are we connected with the local health department, hospitals, and other resources in a way that would help? If health departments are understaffed and unable to provide much help, what steps could we take on our own?
+- If my organization were exposed to measles, what would we be prepared to do?
+  - Could we identify who exactly was exposed?
+  - Could we help affected people get vaccinated as quickly as possible?
+  - Are we connected with the local health department, hospitals, and other resources in a way that would help? If health departments are understaffed and unable to provide much help, what steps could we take on our own?
+
+The next steps that make the most sense will vary between organizations, but these questions are a good start.
 
 Other communities are in a state of **unmaterialized outbreak**. This is just West Texas in late 2024; with a low local vaccination rate and active global risk, a relatively small number of cases will be sufficient to ignite an outbreak. It hasn't happened yet, because the index case hasn't yet arrived. If your community is in this situation, just like the active outbreak scenario, the strongest tool available is to increase the local vaccination rate. This is hard work, but a worthwhile use of resources because even a small improvement can make a difference.
 
 
 ## A little is better than none at all
 
-Trying to increase the vaccination rate or emulate the response of a well-staffed community health center may seem out of touch with the reality of what community organizations can do. But when a case appears, the contagiousness and severity of the disease will make it feel urgent, no matter where it occurs. The leaders involved will quickly feel pressure to act, and even small actions—for example, simply being aware that an unvaccinated person should get a vaccine soon after exposure—could save a life.
+Trying to increase the vaccination rate or emulate the response of a well-staffed community health center may seem out of touch with the reality of what community organizations can do. But when a case appears, the contagiousness and severity of the disease will make it feel urgent, no matter where it occurs. There will be pressure to act, and even small actions—for example, simply being aware that an unvaccinated person should get a vaccine soon after exposure—could save a life.
 
 ---
 
