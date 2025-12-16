@@ -188,6 +188,8 @@ Trying to increase the vaccination rate or emulate the response of a well-staffe
 
 *Comments: nick.griffiths.rc@gmail.com*
 
+*Source code: <https://github.com/ngriffiths21/measles-dashboard>*
+
 ---
 
 ## Data notes
