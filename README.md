@@ -1,6 +1,6 @@
 # Preparing for measles at the local level
 
-<https://measles-reponse.com>
+<https://measles-response.com>
 
 Overview of current measles trends, key things to know, and how to prepare as a leader at a school or local organization.
 
