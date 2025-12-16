@@ -27,7 +27,7 @@ const states = FileAttachment("data/states.json").json({typed: true});
 
 *Nicholas Griffiths*
 
-*November 25, 2025*
+*December 16, 2025*
 
 The United States has had a surge of measles cases in 2025. In April, the New York Times [published an op-ed](https://www.nytimes.com/2025/04/02/opinion/measles-epidemic-texas.html) by Michael Mina, a leading measles expert at Harvard School of Public Health. He wrote:
 
@@ -40,50 +40,38 @@ These articles provide an overview of the problems that got us here, and a good 
 
 <div class="card" style="max-width: 600px;">
   ${resize((width) => casePlot(cases, width))}
+
+  <p>Updated December 10, 2025.</p>
 </div>
 
 
 ## What makes measles different?
 
-The CDC says that people born before 1957 can be assumed immune to measles. This is not because older people are less susceptible to infection,[^15] but because they were alive when measles was still so rampant that they almost certainly got it.[^5]
+[CDC says](https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-13-measles.html) that people born before 1957 can be assumed immune to measles. This is not because older people are less susceptible to infection,[^15] but because they were alive when measles was still so rampant that they almost certainly got it.
 
 [^15]: Adults without immunity are not only as susceptible as kids, but also at greater risk for serious illness.
 
-In those days, half of children got measles by age 6, and 90% of the population got it by age 15. It spreads much faster than other diseases, in part because of its transmission mechanism: while other viruses spread by contact with infected surfaces, or tiny droplets from a nearby cough, this one is airborne, and it can be enough to walk into a room hours after an infected child was there.[^5] It is often estimated that if no one had immunity, the average infected person would infect 12-18 other people. Estimates vary widely, with some much higher estimates in the literature as well[^11]; in any case, it is surely one of the most contagious diseases in the world.[^16]
-
-[^11]: [The basic reproduction number (R0) of measles: a systematic review](https://pubmed.ncbi.nlm.nih.gov/28757186/)
+In those days, half of children got measles by age 6, and 90% of the population got it by age 15. It spreads much faster than other diseases, in part because of its transmission mechanism: while other viruses spread by contact with infected surfaces, or tiny droplets from a nearby cough, this one is airborne, and it can be enough to walk into a room hours after an infected child was there. It is often estimated that if no one had immunity, the average infected person would infect 12-18 other people. Estimates vary widely, with [some much higher estimates in the literature](https://pubmed.ncbi.nlm.nih.gov/28757186/) as well; in any case, it is surely one of the most contagious diseases in the world.[^16]
 
 [^16]: The basic reproduction number (R0) of measles is often reported as 12-18, similar to [pertussis (12-17)](https://pmc.ncbi.nlm.nih.gov/articles/PMC8489951/) and higher than [chickenpox (estimates vary widely, from around 4-16)](https://doi.org/10.1016/j.vaccine.2007.07.036). COVID-19 variants differed, with some Omicron variants [estimated as high as 20](https://doi.org/10.1016/j.abst.2023.09.002), but most below 10.
 
-[^5]: CDC, Pink Book, [Chapter 13: Measles](https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-13-measles.html).
+Measles is also a serious illness. For example, in 1926 there were 8,607 deaths from measles, with 6,746 among children less than 5 years old, making it one of the most deadly infectious diseases among children.[^6] In the following decades there were a fairly steady, extremely high number of cases, but there were also dramatic improvements to medical care and nutrition, and these led to a decrease in the mortality rate. From 1956-1960 there were an average of [450 measles deaths per year](https://academic.oup.com/jid/article-abstract/189/Supplement_1/S1/820569).
 
-Measles is also a serious illness. For example, in 1926 there were 8,607 deaths from measles, with 6,746 among children less than 5 years old, making it one of the most deadly infectious diseases among children.[^6] In the following decades there were a fairly steady, extremely high number of cases, but there were also dramatic improvements to medical care and nutrition, and these led to a decrease in the mortality rate. From 1956-1960 there were an average of 450 measles deaths per year.[^7]
+[^6]: On page 394 of the [Mortality Statistics report for 1926](https://www.cdc.gov/nchs/data/vsushistorical/mortstatsh_1926.pdf), there is a breakdown of U.S. infectious disease deaths by age, sex and race. This year was a particularly bad year for measles.
 
-[^6]: CDC, [Mortality Statistics, 1926](https://www.cdc.gov/nchs/data/vsushistorical/mortstatsh_1926.pdf); U.S. Census, [Population Estimates, 1926](https://www2.census.gov/programs-surveys/popest/tables/1900-1980/national/asrh/pe-11-1926.pdf)
+Today, medical care has improved further, but the disease continues to cause hospitalization, death, and long-term impacts. For example, as of November 4th, 2025, there were just under 1,700 confirmed cases in the U.S. since the start of the year. This was enough to cause 200 hospitalizations (12% of cases) and 3 deaths. For comparison, [one CDC study](https://wwwnc.cdc.gov/eid/article/30/6/23-1285_article) estimated that 5.7% of COVID-19 cases were hospitalized in the pre-vaccine period (this should be taken as a fairly imprecise comparison, though[^14]). The virus infects immune system cells and can lead to complications like pneumonia, diarrhea, and more rarely, encephalitis, which often results in long-term neurological problems. Measles infection can also cause long-term suppression of the immune system, by destroying cells that can remember earlier infections and vaccinations and provide immunity against reinfection.
 
-[^7]: [Measles Elimination in the United States](https://academic.oup.com/jid/article-abstract/189/Supplement_1/S1/820569)
-
-Today, medical care has improved further, but the disease continues to cause hospitalization, death, and long-term impacts. For example, as of November 4th, 2025, there were just under 1,700 confirmed cases in the U.S. since the start of the year. This was enough to cause 200 hospitalizations (12% of cases) and 3 deaths. For comparison, one CDC study[^2] estimated that 5.7% of COVID-19 cases were hospitalized in the pre-vaccine period.[^14] The virus infects immune system cells and can lead to complications like pneumonia, diarrhea, and more rarely, encephalitis, which often results in long-term neurological problems. Measles infection can also cause long-term suppression of the immune system, by destroying cells that can remember earlier infections and vaccinations and provide immunity against reinfection.[^3]
-
-[^14]: The rate in that study varies wildly by age, however. And it would have decreased once people got vaccinated, because many vaccinated people got infected but had more mild cases than unvaccinated people.
-
-[^2]: [Estimates of SARS-CoV-2 Hospitalization and Fatality Rates in the
-    Prevaccination Period, United
-    States](https://wwwnc.cdc.gov/eid/article/30/6/23-1285_article)
-
-[^3]: StatPearls, [Measles](https://www.ncbi.nlm.nih.gov/books/NBK448068/).
+[^14]: Estimating hospitalization and death rates is complex. The rate in the CDC study varies wildly by age, and it would have decreased once people got vaccinated, because many vaccinated people got infected but had more mild cases than unvaccinated people. Also, mild illnesses are far more likely to be unreported (for both measles and COVID-19, but especially for COVID-19) which tends to artificially raise estimated hospitalization rates.
 
 The overall story of measles illness is that it is more severe than other viruses common today, and wildly contagious. But measles was pushed out of the spotlight for over 20 years.
 
 ### The vaccine
 
-The first measles vaccine, licensed in 1963, was extremely successful. Initially the recommendation was to get a single dose of vaccine; this was not a great recommendation, but still managed to decrease annual cases by over 95%. In 1989 it was changed to two doses, and this led to elimination of the disease in 2000.[^5] Today, outbreaks only occur in areas with lower than average vaccination rates, and rarely impact people who are vaccinated or immune.
+The first measles vaccine, licensed in 1963, was [extremely successful](https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-13-measles.html). Initially the recommendation was to get a single dose of vaccine; this was not a great recommendation, but still managed to decrease annual cases by over 95%. In 1989 it was changed to two doses, and as vaccination rates continued to improve, the prevalence dropped further and the disease was declared eliminated in 2000. Today, outbreaks only occur in areas with lower than average vaccination rates, and rarely impact people who are vaccinated or immune.
 
 **To an unusual degree, the outcome of an exposure to measles is determined by vaccination status**. If the person isn't immune, they will probably get sick. If vaccinated, they won't.
 
-Importantly, Measles is also amenable to post-exposure prophylaxis, meaning vaccination after a person is exposed. The CDC recommends vaccination up to 72 hours after exposure for all those who are not already immune.[^12]
-
-[^12]: CDC, [Measles Vaccine Recommendations](https://www.cdc.gov/measles/hcp/vaccine-considerations/index.html).
+Importantly, measles is also amenable to post-exposure prophylaxis, meaning vaccination after a person is exposed. [CDC recommends](https://www.cdc.gov/measles/hcp/vaccine-considerations/index.html) vaccination up to 72 hours after exposure for all those who are not already immune.
 
 This works because measles has a longer incubation period than many other diseases, with typically more than 10 days between first exposure and the appearance of any symptoms. The first signs are usually some combination of fever, cough, runny nose and pink eye. Then the characteristic rash appears a few days after initial symptoms. Measles patients are most contagious around 4 days before the rash starts and up to 4 days after it ends. Because the incubation period is so long and because it takes more than a week to become contagious, it is a good idea to get vaccinated soon after exposure, in order to halt or weaken the infection before it has time to develop.
 
@@ -122,10 +110,7 @@ Schools, community centers, public transit systems, restaurants, libraries, camp
 
 ## Understanding and controlling local outbreaks
 
-The 2025 outbreak originated in West Texas and spread to New Mexico, Oklahoma, and Kansas. More recently, outbreaks started in Arizona, Utah and South Carolina.
-
-[^1]: CDC, [Measles Cases and
-    Outbreaks](https://www.cdc.gov/measles/data-research/index.html). 
+The [2025 measles outbreak](https://www.cdc.gov/measles/data-research/index.html) originated in West Texas and spread to New Mexico, Oklahoma, and Kansas. More recently, outbreaks started in Arizona, Utah and South Carolina.
 
 ```js
 const mapTypeInput = Inputs.radio(["Cases", "Vaccination rate"], {value: "Cases"});
@@ -140,7 +125,7 @@ ${resize((width) => mapPlotZoom(mapType, cases_county, states, width))}
 ```js
 let text;
 if (mapType === "Cases") {
-    text = html`Reported measles cases by county since January 2025. Data from <a href="https://github.com/CSSEGISandData/measles_data">JHU Measles Data Repository</a>. See data notes.`
+    text = html`Reported measles cases by county since January 2025. Updated December 12, 2025. Data from <a href="https://github.com/CSSEGISandData/measles_data">JHU Measles Data Repository</a>. See data notes.`
 } else if (mapType === "Vaccination rate") {
     text = html`Vaccination rate by county as of the 2022-23 school year. Data from <a href="https://github.com/CSSEGISandData/MMR_data">JHU Trends in County-Level MMR Vaccination</a>. County level data not available for all states. See data notes.`
 }
@@ -149,15 +134,13 @@ if (mapType === "Cases") {
 > ${text}
 </div>
 
-Specifically, the outbreak first took off in Gaines County, Texas, where there is a large Old Colony Mennonite community with low vaccination rates. This community is fairly isolated from mainstream society, has a highly conservative ideology, uses minimal modern technology, and speaks a dialect of Low German; for all these reasons (and more), the community does not have a strong relationship with the medical system.[^4] We do not know exactly what the vaccination rate is in this community, but it is clear that it was much lower than average when the outbreak began.
+Specifically, the outbreak first took off in Gaines County, Texas, where there is a [large Old Colony Mennonite community](https://pmc.ncbi.nlm.nih.gov/articles/PMC12135429/) with low vaccination rates. This community is fairly isolated from mainstream society, has a highly conservative ideology, uses minimal modern technology, and speaks a dialect of Low German; for all these reasons (and more), the community does not have a strong relationship with the medical system. We do not know exactly what the vaccination rate is in this community, but it is clear that it was much lower than average when the outbreak began.
 
-[^4]: [Measles outbreaks in the United States in 2025: Practice, policy, and the canary in the coalmine](https://pmc.ncbi.nlm.nih.gov/articles/PMC12135429/).
-
-Health leaders often set a target of 95% for vaccination coverage, which comes from modeling research that suggests this level is enough to naturally contain any outbreaks. The idea is that if someone sick with Measles comes from out of town, nearly everyone they contact will be immune, and even if they happen to spread it to one or two other people, there won't be enough unvaccinated people in the population to sustain transmission. If you live in an area with around 95% coverage you can assume an outbreak is unlikely.
+Health leaders often set a target of 95% for vaccination coverage, which comes from modeling research that suggests this level is enough to naturally contain any outbreaks. The idea is that if someone sick with measles comes from out of town, nearly everyone they contact will be immune, and even if they happen to spread it to one or two other people, there won't be enough unvaccinated people in the population to sustain transmission. If you live in an area with around 95% coverage you can assume an outbreak is unlikely.
 
 This rule of thumb applies far more to **local vaccination rates** than to statewide or national data.
 
-For example, the national data are not very concerning in isolation. The number of fully vaccinated Kindergarteners has dropped slightly in the past few years, but not enough to be a dramatic problem. The national immunity rate remains quite high (around 95%, [according to WHO](https://immunizationdata.who.int/global/wiise-detail-page/measles-vaccination-coverage?CODE=USA&ANTIGEN=MCV2&YEAR=)). In fact, significant gains in the national vaccination rate have been made since 2000, when Measles was declared eliminated from the U.S. Most people are vaccinated with two doses at a young age and considered immune for life, so when vaccination rates change, it is reflected first in younger age cohorts, and only gradually in the national rate.
+For example, the national data are not very concerning in isolation. The number of fully vaccinated Kindergarteners has dropped slightly in the past few years, but not enough to be a dramatic problem. The national immunity rate remains quite high (around 95%, [according to WHO](https://immunizationdata.who.int/global/wiise-detail-page/measles-vaccination-coverage?CODE=USA&ANTIGEN=MCV2&YEAR=)). In fact, significant gains in the national vaccination rate have been made since 2000, when measles was declared eliminated from the U.S. Most people are vaccinated with two doses at a young age and considered immune for life, so when vaccination rates change, it is reflected first in younger age cohorts, and only gradually in the national rate.
 
 <div class="card" style="max-width: 600px;">
   ${resize((width) => vaxPlot(vax_us, width))}
@@ -169,20 +152,15 @@ Once an outbreak develops, it can be exceptionally difficult to control. It is p
 
 ## Understanding and preparing for local exposures
 
-Gaines County, Texas started off with no measles cases and is surrounded by areas with better vaccination rates. The whole thing was kicked off by a single exposure to measles. We can't be sure, but the first case seems likely to have come from overseas. In fact there were two cases in Houston early in the year linked to travel.[^10]
+Gaines County, Texas started off with no measles cases and is surrounded by areas with better vaccination rates. The whole thing was kicked off by a single exposure to measles. We can't be sure, but the first case seems likely to have come from overseas. In fact there were [two cases in Houston](https://www.dshs.texas.gov/news-alerts/confirmed-case-measles-january-2025) early in the year linked to travel.
 
-
-[^10]: Texas Health and Human Services, [Confirmed Case of Measles - January 2025](https://www.dshs.texas.gov/news-alerts/confirmed-case-measles-january-2025)
-
-There are a handful of countries around the world with unusually low vaccination rates and very large recent outbreaks. For example, Romania reported over 30,000 cases in 2024 and the outbreak has been continuing this year.[^8] According to WHO, the vaccination rate (first dose) has declined from around 98% in 2000 to under 70% last year. There has been an influential and growing anti-vaccination movement there, making it difficult to improve coverage.
-
-[^8]: UNICEF, [European Region reports highest number of measles cases in more than 25 years](https://www.unicef.org/press-releases/european-region-reports-highest-number-measles-cases-more-25-years-unicef-whoeurope)
-
-[^9]: WHO, [Measles vaccination coverage data](https://immunizationdata.who.int/global/wiise-detail-page/measles-vaccination-coverage)
+There are a handful of countries around the world with unusually low vaccination rates and very large recent outbreaks. For example, [Romania reported over 30,000 cases](https://www.unicef.org/press-releases/european-region-reports-highest-number-measles-cases-more-25-years-unicef-whoeurope) in 2024 and the outbreak has been continuing this year. [According to WHO](https://immunizationdata.who.int/global/wiise-detail-page/measles-vaccination-coverage), the vaccination rate (first dose) has declined from around 98% in 2000 to under 70% last year. There has been an influential and growing anti-vaccination movement there, making it difficult to improve coverage.
 
 **Large outbreaks overseas have a big impact on local risk of an exposure.** Even though relatively few people travel internationally, each one transmits some amount of risk of bringing the disease with them when they return back home.
 
-Another general pattern to emphasize is seasonal: most cases happen early in the year, typically peaking in winter and spring. In fact, this year's summer months may have had fewer cases than the first half of the year, but were still quite high compared to the same months in previous years.
+Another general pattern to emphasize is seasonal: most cases happen early in the year, typically peaking in winter and spring.[^17] In fact, this year's summer months may have had fewer cases than the first half of the year, but were still quite high compared to the same months in previous years.
+
+[^17]: This is specific to the U.S., where indoor gatherings are more common in the winter months. Also, our travel patterns are most connected to other Northern hemisphere countries, so our seasonal patterns are aligned with theirs. Southern hemisphere and tropical countries have different patterns that reflect their local climate and travel patterns.
 
 What happens after an exposure depends on the local vaccination rate. In some areas there is a pattern of **intermittent sparks**. For example, in Boston, it is known that [someone with measles visited](https://www.boston.gov/news/person-measles-visited-boston) for a couple days back in June. Most neighboring towns have vaccination rates around 95% or even higher. In areas like this, sometimes cases appear, and thinking of each one like a spark, they don't really ignite because nearly everyone they encounter is immune. Occasionally there may be a tiny cluster that doesn't spread any further. This is the current state of a lot of the U.S.
 
@@ -206,6 +184,12 @@ Trying to increase the vaccination rate or emulate the response of a well-staffe
 
 ---
 
+*Nicholas Griffiths is an epidemiologist who previously worked at Massachusetts Department of Public Health and has an MPH from Boston University.*
+
+*Comments: nick.griffiths.rc@gmail.com*
+
+---
+
 ## Data notes
 
 Weekly measles cases: CDC, [Measles Cases and Outbreaks](https://www.cdc.gov/measles/data-research/index.html), section titled "Weekly measles cases by rash onset date." This data includes *confirmed* cases, meaning they must either be epidemiologically linked to a previous case, or confirmed via lab testing. Some cases are missed by this reporting process.
@@ -216,10 +200,15 @@ Vaccination rate among Kindergartners: CDC data table, [Vaccination Coverage and
 
 County level measles vaccination: [JHU Trends in County-Level MMR Vaccination](https://github.com/CSSEGISandData/MMR_data) by Ensheng Dong, Samee Saiyed, Andreas Nearchou, Yamato Okura, and Lauren M. Gardner at Johns Hopkins.
 
----
+## Further reading and resources
 
-Thank you to all the colleagues, friends and family who provided helpful feedback.
+CDC, Pink Book, [Chapter 13: Measles](https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-13-measles.html).
 
----
+StatPearls, [Measles](https://www.ncbi.nlm.nih.gov/books/NBK448068/).
 
-*Nicholas Griffiths is an epidemiologist who previously worked at Massachusetts Department of Public Health and has an MPH from Boston University.*
+CDC, [Measles Cases and
+    Outbreaks](https://www.cdc.gov/measles/data-research/index.html).
+
+Johns Hopkins, [Measles Tracker](https://publichealth.jhu.edu/ivac/resources/us-measles-tracker).
+
+USA Today, [Vaccination and outbreak tracker](https://data.usatoday.com/projects/county-vaccination-coverage-and-measles-outbreaks/).

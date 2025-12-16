@@ -10,10 +10,10 @@ with urllib.request.urlopen(
     county_json = json.load(f)
 
 cases_county = pd.read_csv(
-    "https://raw.githubusercontent.com/CSSEGISandData/measles_data/refs/heads/main/measles_county_all_updates.csv"
+    "https://raw.githubusercontent.com/CSSEGISandData/measles_data/e7865a38eb892bc8b93ab87c3cc232ac4fe06fd4/measles_county_all_updates.csv"
 )
 
-vax_data = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/MMR_data/refs/heads/main/mmr_data_us_counties.csv")
+vax_data = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/MMR_data/7710a33a4bde6653f89bdf67d577e82a0bd4aef8/mmr_data_us_counties.csv")
 
 vax_data = vax_data.set_index("FIPS")["SY2022_23"]
 
@@ -43,6 +43,6 @@ for cty in county_json["features"]:
         float(these_vax) if (these_vax is not None) else float(0)
     )
     if math.isnan(cty["properties"]["vaxrate"]):
-        cty["properties"]["vaxrate"] = float(0);
+        cty["properties"]["vaxrate"] = float(0)
 
 json.dump(county_json, sys.stdout)

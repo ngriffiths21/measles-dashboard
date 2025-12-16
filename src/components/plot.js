@@ -28,7 +28,7 @@ export function vaxPlot(data, width) {
 }
 
 
-function showToolTip(textG, type, path, textCanvas) {
+function showToolTip(textG, type, path, textCanvas, fontsize) {
     return ((ev) => {
         const countyData = d3.select(ev.target).data()[0]; // access geo feature data
         if (countyData.properties === undefined) return;
@@ -59,11 +59,13 @@ function showToolTip(textG, type, path, textCanvas) {
         textG.append("text")
             .attr("x", 20)
             .attr("y", -35)
+            .attr("font-size", `${fontsize}`)
             .text(`${countyName}`);
 
         textG.append("text")
             .attr("x", 20)
             .attr("y", -10)
+            .attr("font-size", `${fontsize}`)
             .text(`${type}: ${value}`);
 
         // draw rectangle around text
@@ -91,7 +93,6 @@ function closeToolTip(textG) {
 
 export function mapPlotZoom(type, countymesh, statemesh, width) {
     const colorCases = d3.scaleQuantize([1, 10], d3.schemeReds[9]);
-    console.log(d3.schemeReds[9].reverse());
     const colorVaxScale = d3.scaleQuantize([0.6, 1], d3.schemeReds[9].toReversed());
     const colorVax = (input) => {
         if (input === 0) {
@@ -99,7 +100,6 @@ export function mapPlotZoom(type, countymesh, statemesh, width) {
         }
         return colorVaxScale(input);
     }
-    console.log(colorVax(0.1), colorVax(0.6));
     const path = d3.geoPath(d3.geoAlbersUsa());
 
     const svg = d3.create("svg")
@@ -119,7 +119,14 @@ export function mapPlotZoom(type, countymesh, statemesh, width) {
     // provides hover event anchored coordinate system
     const textG = textCanvas.append("g");
 
-    const showToolTipHandler = showToolTip(textG, type, path, textCanvas);
+    let fontsize;
+    if (width < 500) {
+        fontsize = 32;
+    } else {
+        fontsize = 20;
+    }
+
+    const showToolTipHandler = showToolTip(textG, type, path, textCanvas, fontsize);
     const closeToolTipHandler = closeToolTip(textG);
 
     mapCanvas.append("g") // draw counties and attach tooltip handler
@@ -129,8 +136,8 @@ export function mapPlotZoom(type, countymesh, statemesh, width) {
         .attr("stroke", "#C0C0C0")
         .attr("stroke-width", 0.25)
         .attr("d", path)
-        .on("mouseover", showToolTipHandler)
-        .on("mouseout", closeToolTipHandler);
+        .on("pointerenter", showToolTipHandler)
+        .on("pointerleave", closeToolTipHandler);
 
     if (type === "Cases") {
         mapCanvas.selectAll("path")
